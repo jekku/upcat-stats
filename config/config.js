@@ -19,6 +19,18 @@ const config = {
     VIEWS_DIR: path.normalize(__dirname + '/../views'),
     LOGS_DIR: path.normalize(__dirname + '/../logs'),
 
+    CAMPUS_HASH: {
+        baguio: "BAGUIO",
+        cebu: "CEBU",
+        diliman: "DILIMAN",
+        los_banos: "LOS BAÑOS",
+        manila: "MANILA",
+        mindanao: "MINDANAO",
+        open_u: "OPEN U",
+        pampaga: "PAMPAGA",
+        visayas: "VISAYAS"
+    },
+
     use: (env) => {
         _.assign(config, require(__dirname + '/env/' + env));
         return config;
