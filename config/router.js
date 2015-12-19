@@ -14,6 +14,7 @@ module.exports = (router) => {
 
     router.get('/course', __.course.get_courses);
     router.get('/course/passers', __.course.get_passers_per_course);
+    router.get('/course/passers/:campus', __.course.get_course_passers_per_campus);
 
     router.all('*', (req, res) => {
         res.status(404)

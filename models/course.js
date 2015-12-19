@@ -24,3 +24,16 @@ exports.get_passers_per_course = (callback) => {
       .end();
 };
 
+
+
+exports.get_course_passers_per_campus = (campus, callback) => {
+    mysql.use('upcat')
+      .query(
+          "SELECT count(*)'passers', course FROM passers " +
+          "WHERE campus = ? GROUP BY course",
+          [campus],
+          callback
+      )
+      .end();
+};
+
