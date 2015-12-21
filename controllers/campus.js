@@ -18,7 +18,7 @@ exports.get_campuses = (req, res, next) => {
             return arr;
         }, []);
 
-        res.send({data: campuses});
+        res.items(campuses).send();
     }
 
     Campus.get_campuses(send_response);
@@ -33,7 +33,7 @@ exports.get_passers_per_campus = (req, res, next) => {
             return next(err);
         }
 
-        res.send({data: result});
+        res.items(result).send();
     }
 
     Campus.get_passers_per_campus(send_response);
