@@ -19,7 +19,7 @@ exports.get_courses = (req, res, next) => {
             return arr;
         }, []);
 
-        res.send({data: courses});
+        res.items(courses).send();
     }
 
     Course.get_courses(send_response);
@@ -34,7 +34,7 @@ exports.get_passers_per_course = (req, res, next) => {
             return next(err);
         }
 
-        res.send({data: result});
+        res.items(result).send();
     }
 
     Course.get_passers_per_course(send_response);
